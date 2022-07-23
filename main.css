@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-shadow: 0 0 4px #000, 0 0 4px #000;
+}
+
+#mySlider {
+    appearance: none;
+    width: 95%;
+    height: 35px;
+    background: steelblue;
+    margin-top: 35px;
+}
+
+#mySlider::-webkit-slider-thumb {
+    appearance: none;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+}
+
+video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+#heightInfo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -100%);
+    border-bottom: 3px solid #fff;
+    width: 100%;
+}
