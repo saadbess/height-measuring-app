@@ -1,17 +1,19 @@
 const main = () => {
     window.addEventListener("deviceorientation", onOrientationChange);
 
-    navigator.mediaDevices.getUserMedia({video: {
-        facingMode: 'environment'
-    }})
-        .then(function(signal) {
-            const video = document.getElementById("myVideo");
-            video.srcObject = signal;
-            video.play();
-        })
-        .catch(function (err) {
-            alert(err);
-        })
+    if ('mediaDevices' in navigator && 'getUserMedia' in navigator.mediaDevices) {
+        navigator.mediaDevices.getUserMedia({video: {
+            facingMode: 'environment'
+        }})
+            .then(function(signal) {
+                const video = document.getElementById("myVideo");
+                video.srcObject = signal;
+                video.play();
+            })
+            .catch(function (err) {
+                alert(err);
+            })
+    }
 }
 
 // this will only trigger on a device with an orientation sensor
